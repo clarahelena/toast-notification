@@ -1,6 +1,6 @@
 const botoes = document.querySelectorAll('.botao');
 const lista = document.querySelector('.toast-lista');
-const objetos = {
+const dadosToast = {
   sucesso: {
     icone: 'fa-solid fa-circle-check',
     texto: 'Sucesso Toast.',
@@ -19,16 +19,22 @@ const objetos = {
   },
 };
 
+function removerToast(toast) {
+  toast.classList.add('hide');
+  setTimeout(() => toast.remove(), 600);
+}
+
 function criarToast(id) {
-  const { icone, texto } = objetos[id];
-  const item = document.createElement('li');
-  lista.appendChild(item);
-  item.className = `toast ${id}`;
-  item.innerHTML = `
+  const { icone, texto } = dadosToast[id];
+  const toast = document.createElement('li');
+  lista.appendChild(toast);
+  toast.className = `toast ${id}`;
+  toast.innerHTML = `
   <div class="coluna">
   <i class='${icone}'></i>
   <span>${texto}</span></div>
   <i class="fa-solid fa-xmark"></i>`;
+  setTimeout(() => removerToast(toast), 5000);
 }
 botoes.forEach((botao) => {
   botao.addEventListener('click', () => criarToast(botao.id));

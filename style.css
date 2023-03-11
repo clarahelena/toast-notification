@@ -42,7 +42,8 @@ body{
   margin-bottom: 12px;
   cursor: pointer;
   overflow: hidden;
-  animation: teste 1.5s 1.5s forwards;
+  animation: showtoast 0.5s ease forwards;
+  left: calc(100% + 20px);
 }
 .coluna{
   margin-right: 30px;
@@ -72,9 +73,8 @@ body{
   width: 50%;
   bottom: 0px;
   left: 0px;
-  animation: barra 1.5s forwards;
+  animation: barra 5s forwards;
 }
-
 
 .botao{
   padding: 10px 20px;
@@ -86,24 +86,36 @@ body{
   color: var(--claro);
 }
 
-.botao.sucesso{
+.botao.sucesso, .toast.sucesso::before{
   background-color: var(--verde);
 }
-.botao.erro{
+.botao.erro, .toast.erro::before{
   background-color: var(--vermelho);
 }
-.botao.aviso{
+.botao.aviso, .toast.aviso::before{
   background-color: var(--amarelo);
 }
-.botao.info{
+.botao.info, .toast.info::before{
   background-color: var(--azul);
 }
 
+.hide{
+  animation: hide 0.5s ease;
+}
 
-@keyframes teste{
-  0% {right: 10px;}
 
-  100%{right: -300px;}
+@keyframes showtoast{
+  0% {left: calc(100% + 20px);}
+
+  100%{left: -5px;}
+}
+
+@keyframes hide{
+  0% {left: -5px;}
+
+  10% {left: -15px;}
+
+  100%{left: calc(100% + 20px);}
 }
 
 @keyframes barra{
