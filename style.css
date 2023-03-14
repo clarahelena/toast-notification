@@ -84,6 +84,10 @@ body{
   font-weight: 400;
   cursor: pointer;
   color: var(--claro);
+  transition: transform 0.2s ease-out;
+}
+.botao:active{
+  transform: translateY(4px);
 }
 
 .botao.sucesso, .toast.sucesso::before{
