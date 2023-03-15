@@ -127,3 +127,43 @@ body{
   100%{width: 0%;}
 }
 
+@media(max-width: 800px) {
+  body{
+    justify-content: flex-end;
+  }
+  .main{
+    margin-bottom: 120px;
+  }
+  .toast{
+    padding: 14px 16px;
+  }
+  .botao{
+    margin-left: 10px;
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 490px){
+  .main{
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .toast-lista{
+    width: 90%;
+  }
+}
+
+@media(max-width: 340px){
+  .main{
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .botao{
+    margin-left: 0px;
+    font-size: 14px;
+  }
+}
