@@ -24,7 +24,7 @@ const dadosToast = {
 function removerToast(toast) {
   toast.classList.add('hide');
   if (toast.timeoutId) clearTimeout(toast.timeoutId);
-  setTimeout(() => toast.remove(), 600);
+  setTimeout(() => toast.remove(), 500);
 }
 
 function criarToast(id) {
